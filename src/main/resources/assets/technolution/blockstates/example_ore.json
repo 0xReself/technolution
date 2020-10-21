@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "technolution:block/example_ore" }
+    }
+}
