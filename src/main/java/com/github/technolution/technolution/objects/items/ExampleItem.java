@@ -1,6 +1,6 @@
 package com.github.technolution.technolution.objects.items;
 
-import com.github.technolution.init.ModItemGroup;
+import com.github.technolution.technolution.init.ModItemGroup;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

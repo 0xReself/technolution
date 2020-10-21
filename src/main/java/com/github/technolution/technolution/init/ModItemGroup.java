@@ -1,4 +1,4 @@
-package com.github.technolution.init;
+package com.github.technolution.technolution.init;
 
 import java.util.function.Supplier;
 
@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 public class ModItemGroup extends ItemGroup {
 
-    public static final ItemGroup MOD_ITEM_GROUP = new ModItemGroup(Technolution.ModID, () -> new ItemStack(ModItems.Example_Item));
+    public static final ItemGroup MOD_ITEM_GROUP = new ModItemGroup(Technolution.ModID, () -> new ItemStack(Register.EXAMPLE_ITEM.get()));
 
     private final Supplier<ItemStack> iconSupplier;
     

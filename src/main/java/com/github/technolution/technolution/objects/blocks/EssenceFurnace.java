@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockReader;
 public class EssenceFurnace extends Block {
 
     public EssenceFurnace() {
-        super(Block.Properties.create(Material.IRON));
+        super(Block.Properties.create(Material.ROCK));
     }
     
     @Override

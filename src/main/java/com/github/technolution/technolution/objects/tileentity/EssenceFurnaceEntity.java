@@ -1,6 +1,6 @@
 package com.github.technolution.technolution.objects.tileentity;
 
-import com.github.technolution.init.ModBlocks;
+import com.github.technolution.technolution.init.Register;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -17,7 +17,7 @@ import net.minecraftforge.items.ItemStackHandler;
 public class EssenceFurnaceEntity extends TileEntity implements ITickableTileEntity {
 
     public EssenceFurnaceEntity() {
-        super(ModBlocks.essencetile);
+        super(Register.ESSENCE_FURNACE_ENTITY.get());
     }
     
     @Override
@@ -57,14 +57,14 @@ public class EssenceFurnaceEntity extends TileEntity implements ITickableTileEnt
 
     @Override
     public void read(CompoundNBT tag) {
-        itemHandler.deserializeNBT(tag.getCompound("inv"));
+        itemHandler.deserializeNBT(tag.getCompound("inventory"));
 
         super.read(tag);
     }
 
     @Override
     public CompoundNBT write(CompoundNBT tag) {
-        tag.put("inv", itemHandler.serializeNBT());
+        tag.put("inventory", itemHandler.serializeNBT());
 
         return super.write(tag);
     }
