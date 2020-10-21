@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 public class Technolution {
     public static final String ModID = "technolution";
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public Technolution() {
         LOGGER.debug(ModID + " is starting ...");

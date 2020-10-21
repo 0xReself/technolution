@@ -1,5 +1,7 @@
 package com.github.technolution.technolution.objects.items;
 
+import com.github.technolution.init.ModItemGroup;
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,7 +12,7 @@ import net.minecraft.world.World;
 public class ExampleItem extends Item{
 
     public ExampleItem(Properties properties) {
-        super(properties);
+        super(properties.group(ModItemGroup.MOD_ITEM_GROUP));
     }
     
     @Override

@@ -3,10 +3,8 @@
     "textures": {
         "particle": "technolution:block/example_ore",
         "down": "technolution:block/example_ore",
-        "up": "technolution:block/example_ore",
         "east": "technolution:block/example_ore",
         "west": "technolution:block/example_ore",
-        "north": "technolution:block/example_ore", 
         "south": "technolution:block/example_ore"
     }
 }

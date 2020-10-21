@@ -8,5 +8,5 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(Technolution.ModID)
 public class ModItems {
-    public static final Item Example_Item = new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP));
+    public static final Item Example_Item = new ExampleItem(new Item.Properties());
 }

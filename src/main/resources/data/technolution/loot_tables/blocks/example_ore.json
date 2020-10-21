@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "name": "example_ore",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "technolution:example_ore"
+                }
+            ]
+        }
+    ]
+}

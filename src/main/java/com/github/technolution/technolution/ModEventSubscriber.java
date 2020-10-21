@@ -1,10 +1,14 @@
 package com.github.technolution.technolution;
 
+import com.github.technolution.init.ModBlocks;
+import com.github.technolution.init.ModItemGroup;
 import com.github.technolution.init.ModItems;
+import com.github.technolution.technolution.objects.tileentity.EssenceFurnaceEntity;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,13 +24,21 @@ public class ModEventSubscriber {
         event.getRegistry().registerAll(
             setup(ModItems.Example_Item, "example_item")
         );
+        event.getRegistry().register(new BlockItem(ModBlocks.Example_ore, new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)).setRegistryName("example_ore"));
+        event.getRegistry().register(new BlockItem(ModBlocks.EssenceFurnace, new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)).setRegistryName("essence_furnace"));
     }
 
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(
-	        setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)), "example_ore")
+            setup(ModBlocks.Example_ore, "example_ore"),
+            setup(ModBlocks.EssenceFurnace, "essence_furnace")
         );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterTileEntityTypes(RegistryEvent.Register<TileEntityType<?>> event) {
+        event.getRegistry().register(TileEntityType.Builder.create(EssenceFurnaceEntity::new, ModBlocks.EssenceFurnace).build(null).setRegistryName("essence_furnace"));
     }
 
     public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
