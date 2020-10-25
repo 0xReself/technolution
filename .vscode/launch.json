@@ -16,7 +16,7 @@
         "MCP_VERSION": "20200515.085601",
         "FORGE_VERSION": "31.2.0",
         "assetIndex": "1.15",
-        "assetDirectory": "C:\\Users\\Felix\\.gradle\\caches\\forge_gradle\\assets",
+        "assetDirectory": "C:\\Users\\larsm\\.gradle\\caches\\forge_gradle\\assets",
         "nativesDirectory": "${workspaceFolder}\\build\\natives",
         "FORGE_GROUP": "net.minecraftforge",
         "target": "fmluserdevclient",
