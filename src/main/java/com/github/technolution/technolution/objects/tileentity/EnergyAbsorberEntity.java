@@ -6,13 +6,16 @@ import com.github.technolution.technolution.init.Config;
 import com.github.technolution.technolution.init.Register;
 import com.github.technolution.technolution.objects.tools.CustomEnergyStorage;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -58,6 +61,11 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
         }
 
         //Update blockstate
+        BlockState blockState = world.getBlockState(pos);
+        if(blockState.get(BlockStateProperties.POWERED) != counter > 0) {
+            world.setBlockState(pos, blockState.with(BlockStateProperties.POWERED, counter > 0), 
+                Constants.BlockFlags.NOTIFY_NEIGHBORS + Constants.BlockFlags.BLOCK_UPDATE);
+        }
 
         sendOutPower();
     }
