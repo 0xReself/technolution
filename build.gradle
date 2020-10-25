@@ -102,9 +102,9 @@ dependencies {
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     
-    compile fg.deobf('curse.maven:mekanism:2996531') // <- only the top one get updated when using ./gradlew build --refresh-dependencies
-    compile fg.deobf('curse.maven:jei:3039710')
-    compile fg.deobf('curse.maven:hwyla:2931299')
+    //compile fg.deobf('curse.maven:mekanism:2996531') // <- only the top one get updated when using ./gradlew build --refresh-dependencies
+    //compile fg.deobf('curse.maven:jei:3039710')
+    //compile fg.deobf('curse.maven:hwyla:2931299')
 
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
 
