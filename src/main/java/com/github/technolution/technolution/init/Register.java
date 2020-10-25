@@ -7,6 +7,7 @@ import com.github.technolution.technolution.objects.blocks.ExampleOre;
 import com.github.technolution.technolution.objects.container.EnergyAbsorberContainer;
 import com.github.technolution.technolution.objects.blocks.TurquoiseOreBlock;
 import com.github.technolution.technolution.objects.items.ExampleItem;
+import com.github.technolution.technolution.objects.items.TurquoiseCrystalItem;
 import com.github.technolution.technolution.objects.tileentity.EnergyAbsorberEntity;
 import com.github.technolution.technolution.objects.tileentity.EssenceFurnaceEntity;
 
@@ -41,14 +42,15 @@ public class Register {
     public static final RegistryObject<Block> EXAMPLE_ORE = BLOCKS.register("example_ore", () -> new ExampleOre());
     public static final RegistryObject<Block> ESSENCE_FURNACE = BLOCKS.register("essence_furnace", () -> new EssenceFurnace());
     public static final RegistryObject<Block> ENERGY_ABSORBER_BLOCK = BLOCKS.register("energy_absorber_block", () -> new EnergyAbsorberBlock());
-    public static final RegistryObject<Block> TURQUOISE_ORE_BLOCK = BLOCKS.register("turquoise_ore", () -> new TurquoiseOreBlock());
+    public static final RegistryObject<Block> TURQUOISE_ORE_BLOCK = BLOCKS.register("turquoise_ore_block", () -> new TurquoiseOreBlock());
 
     //Items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> TURQUOISE_ORE_ITEM = ITEMS.register("turquoise_crystal", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> TURQUOISE_CRYSTAL_ITEM = ITEMS.register("turquoise_crystal_item", () -> new TurquoiseCrystalItem());
     
     //Block Items
     public static final RegistryObject<Item> EXAMPLE_ORE_ITEM = ITEMS.register("example_ore", () -> new BlockItem(EXAMPLE_ORE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> TURQUOISE_ORE_ITEM = ITEMS.register("turquoise_ore_block", () -> new BlockItem(TURQUOISE_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ESSENCE_FURNACE_ITEM = ITEMS.register("essence_furnace", () -> new BlockItem(ESSENCE_FURNACE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ENERGY_ABSORBER_ITEM = ITEMS.register("energy_absorber_block", () -> new BlockItem(ENERGY_ABSORBER_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     //Entities
