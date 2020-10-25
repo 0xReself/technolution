@@ -1,5 +1,6 @@
 {
     "item.technolution.example_item": "EI",
     "itemGroup.technolution": "Kranke items",
-    "item.technolution.TurquoiseCrystaItem": "turquoise crysta"
+    "item.technolution.turquoise_crystal_item": "Turquoise Crysta",
+    "item.technolution.turquoise_ore": "Turquoise Ore"
 }
