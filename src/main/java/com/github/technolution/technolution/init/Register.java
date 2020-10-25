@@ -3,7 +3,6 @@ package com.github.technolution.technolution.init;
 import com.github.technolution.technolution.Technolution;
 import com.github.technolution.technolution.objects.blocks.EssenceFurnace;
 import com.github.technolution.technolution.objects.blocks.ExampleOre;
-import com.github.technolution.technolution.objects.container.EssenceFurnaceContainer;
 import com.github.technolution.technolution.objects.items.ExampleItem;
 import com.github.technolution.technolution.objects.tileentity.EssenceFurnaceEntity;
 
@@ -12,9 +11,6 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,13 +22,6 @@ public class Register {
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Technolution.ModID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = new DeferredRegister<TileEntityType<?>>(ForgeRegistries.TILE_ENTITIES, Technolution.ModID);
     public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<ContainerType<?>>(ForgeRegistries.CONTAINERS, Technolution.ModID);
-
-    //Container
-    public static final RegistryObject<ContainerType<EssenceFurnaceContainer>> ESSENCE_FURNACE_CONTAINER = CONTAINERS.register("essence_furnace", () -> IForgeContainerType.create((windowId, inv, data) -> {
-        BlockPos pos = data.readBlockPos();
-        World world = inv.player.getEntityWorld();
-        return new EssenceFurnaceContainer(windowId, world, pos, inv, inv.player);
-    }));
 
     //Blocks
     public static final RegistryObject<Block> EXAMPLE_ORE = BLOCKS.register("example_ore", () -> new ExampleOre());
