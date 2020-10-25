@@ -18,7 +18,6 @@ group = 'com.github.technolution.technolution' // http://maven.apache.org/guides
 archivesBaseName = 'technolution'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshot are built nightly.
@@ -85,6 +84,11 @@ minecraft {
     }
 }
 
+repositories {
+    maven { url = "https://www.cursemaven.com" }
+}
+
+
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
@@ -97,6 +101,11 @@ dependencies {
 
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    
+    compile fg.deobf('curse.maven:mekanism:2996531') // <- only the top one get updated when using ./gradlew build --refresh-dependencies
+    compile fg.deobf('curse.maven:jei:3039710')
+    compile fg.deobf('curse.maven:hwyla:2931299')
+
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
