@@ -2,6 +2,7 @@ package com.github.technolution.technolution;
 
 import com.github.technolution.technolution.init.Register;
 import com.github.technolution.technolution.objects.screen.EnergyAbsorberScreen;
+import com.github.technolution.technolution.objects.world.TechnolutionOreGen;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Technolution.ModID)
@@ -26,7 +28,12 @@ public class Technolution {
     }
 
     @SubscribeEvent
-    public static void clientSetup(final FMLClientSetupEvent e) {
+    public static void leadCompleteEvent(FMLLoadCompleteEvent event) {
+        TechnolutionOreGen.generateOre();
+    }
+
+    @SubscribeEvent
+    public static void clientSetup(final FMLClientSetupEvent event) {
         ScreenManager.registerFactory(Register.ENERGY_ABSORBER_CONTAINER.get(), EnergyAbsorberScreen::new);
     }
 }
