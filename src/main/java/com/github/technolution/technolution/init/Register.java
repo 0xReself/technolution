@@ -5,6 +5,7 @@ import com.github.technolution.technolution.objects.blocks.EnergyAbsorberBlock;
 import com.github.technolution.technolution.objects.blocks.EssenceFurnace;
 import com.github.technolution.technolution.objects.blocks.ExampleOre;
 import com.github.technolution.technolution.objects.container.EnergyAbsorberContainer;
+import com.github.technolution.technolution.objects.blocks.TurquoiseOreBlock;
 import com.github.technolution.technolution.objects.items.ExampleItem;
 import com.github.technolution.technolution.objects.tileentity.EnergyAbsorberEntity;
 import com.github.technolution.technolution.objects.tileentity.EssenceFurnaceEntity;
@@ -40,8 +41,11 @@ public class Register {
     public static final RegistryObject<Block> EXAMPLE_ORE = BLOCKS.register("example_ore", () -> new ExampleOre());
     public static final RegistryObject<Block> ESSENCE_FURNACE = BLOCKS.register("essence_furnace", () -> new EssenceFurnace());
     public static final RegistryObject<Block> ENERGY_ABSORBER_BLOCK = BLOCKS.register("energy_absorber_block", () -> new EnergyAbsorberBlock());
+    public static final RegistryObject<Block> TURQUOISE_ORE_BLOCK = BLOCKS.register("turquoise_ore", () -> new TurquoiseOreBlock());
+
     //Items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> TURQUOISE_ORE_ITEM = ITEMS.register("turquoise_crystal", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     
     //Block Items
     public static final RegistryObject<Item> EXAMPLE_ORE_ITEM = ITEMS.register("example_ore", () -> new BlockItem(EXAMPLE_ORE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));

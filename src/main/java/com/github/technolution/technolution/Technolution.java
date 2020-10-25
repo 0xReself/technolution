@@ -9,13 +9,12 @@ import org.apache.logging.log4j.Logger;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Technolution.ModID)
-@EventBusSubscriber(modid = Technolution.ModID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = Technolution.ModID, bus = Bus.MOD)
 public class Technolution {
     public static final String ModID = "technolution";
 
