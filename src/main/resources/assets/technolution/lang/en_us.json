@@ -2,5 +2,9 @@
     "item.technolution.example_item": "EI",
     "itemGroup.technolution": "Kranke items",
     "item.technolution.turquoise_crystal_item": "Turquoise Crysta",
-    "item.technolution.turquoise_ore": "Turquoise Ore"
+    "item.technolution.turquoise_ore": "Turquoise Ore",
+    "block.technolution.energy_absorber_block_basic": "Basic Energy Absorber",
+    "block.technolution.energy_absorber_block_theta": "Theta Energy Absorber",
+    "block.technolution.energy_absorber_block_era": "Era Energy Absorber",
+    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber"
 }

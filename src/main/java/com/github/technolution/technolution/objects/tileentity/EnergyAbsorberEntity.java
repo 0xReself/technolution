@@ -3,7 +3,6 @@ package com.github.technolution.technolution.objects.tileentity;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.github.technolution.technolution.init.Config;
-import com.github.technolution.technolution.init.Register;
 import com.github.technolution.technolution.objects.tools.CustomEnergyStorage;
 
 import net.minecraft.block.BlockState;
@@ -13,6 +12,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.Constants;
@@ -23,7 +23,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEntity{
+public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEntity {
 
     private ItemStackHandler itemHandler = createHandler();
     private CustomEnergyStorage energyStorage = createEnergy();
@@ -31,10 +31,17 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
     private LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
     private LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> energyStorage);
 
-    private int counter = 0;
+    protected int blockTier = 1;
 
-    public EnergyAbsorberEntity() {
-        super(Register.ENERGY_ABSORBER_ENTITY.get());
+    private int counter = 0;
+    
+
+    public EnergyAbsorberEntity(TileEntityType<?> type) {
+        super(type);
+    }
+
+    public int getTier() {
+        return blockTier;
     }
 
     @Override
@@ -46,7 +53,7 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
         if(counter > 0) {
             counter--;
             if(counter <= 0) {
-                energyStorage.addEnergy(Config.ENERGY_ABSORBER_GENERATE.get());
+                energyStorage.addEnergy(Config.ENERGY_ABSORBER_GENERATE.get() * blockTier);
             }
             markDirty();
         }
@@ -72,13 +79,17 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
     
     private void sendOutPower() {
         AtomicInteger capacity = new AtomicInteger(energyStorage.getEnergyStored());
+        BlockState blockState = world.getBlockState(pos);
         if (capacity.get() > 0) {
             for (Direction direction : Direction.values()) {
+                if(blockState.get(BlockStateProperties.FACING) == direction) {
+                    return;
+                }
                 TileEntity te = world.getTileEntity(pos.offset(direction));
                 if (te != null) {
                     boolean doContinue = te.getCapability(CapabilityEnergy.ENERGY, direction).map(handler -> {
                                 if (handler.canReceive()) {
-                                    int received = handler.receiveEnergy(Math.min(capacity.get(), Config.ENERGY_ABSORBER_SEND.get()), false);
+                                    int received = handler.receiveEnergy(Math.min(capacity.get(), Config.ENERGY_ABSORBER_SEND.get() * blockTier), false);
                                     capacity.addAndGet(-received);
                                     energyStorage.consumeEnergy(received);
                                     markDirty();
@@ -142,8 +153,8 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
     }
 
     private CustomEnergyStorage createEnergy() {
-        //TODO MaxCap get from Config
-        return new CustomEnergyStorage(Config.ENERGY_ABSORBER_MAXPOWER.get(), Config.ENERGY_ABSORBER_SEND.get()) {
+        //TODO MaxCap get from Config not working right now
+        return new CustomEnergyStorage(Config.ENERGY_ABSORBER_MAXPOWER.get() * blockTier, Config.ENERGY_ABSORBER_SEND.get() * blockTier) {
             @Override
             public void onEnergyChanged() {
                 markDirty();
@@ -153,11 +164,14 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
 
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-        if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            return handler.cast();
-        }
-        if(cap == CapabilityEnergy.ENERGY) {
-            return energy.cast();
+        BlockState state = world.getBlockState(pos);
+        if(state.get(BlockStateProperties.FACING) != side) {
+            if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+                return handler.cast();
+            }
+            if(cap == CapabilityEnergy.ENERGY) {
+                return energy.cast();
+            }
         }
         return super.getCapability(cap, side);
     }

@@ -1,0 +1,36 @@
+{
+    "variants": {
+      "facing=north,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_theta",
+        "y": 0
+      },
+      "facing=south,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_theta",
+        "y": 180
+      },
+      "facing=west,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_theta",
+        "y": 270
+      },
+      "facing=east,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_theta",
+        "y": 90
+      },
+      "facing=north,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_theta",
+        "y": 0
+      },
+      "facing=south,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_theta",
+        "y": 180
+      },
+      "facing=west,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_theta",
+        "y": 270
+      },
+      "facing=east,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_theta",
+        "y": 90
+      }
+    }
+  }
