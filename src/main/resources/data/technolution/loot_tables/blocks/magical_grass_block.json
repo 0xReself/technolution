@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "name": "emagical_grass_block",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "technolution:magical_grass_item"
+                }
+            ]
+        }
+    ]
+}
