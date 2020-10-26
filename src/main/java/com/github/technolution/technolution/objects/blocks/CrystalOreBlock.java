@@ -8,19 +8,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class CrystalOreBlock extends Block{
-    private double xpAmount = 0.5f;
-    private int xpDrop = 0;
+    private int xpAmount = 1;
     public CrystalOreBlock(int tier) {
         super(Block.Properties.create(Material.ROCK).hardnessAndResistance(1 + 1.5f * tier, 2.0F));
-        xpAmount *= tier;
+        xpAmount += tier * 2 ;
     }
 
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        if(xpAmount % 1 != 0){
-            xpDrop = (int)(Math.random() * (xpAmount + (1 - xpAmount % 1) - xpAmount - (xpAmount / 1)) + xpAmount - (xpAmount / 1));
+        if(!worldIn.isRemote()){
+            dropXpOnBlockBreak(worldIn, pos, this.xpAmount);
         }
-        dropXpOnBlockBreak(worldIn, pos, xpDrop);
         super.onBlockHarvested(worldIn, pos, state, player);
     }
 }

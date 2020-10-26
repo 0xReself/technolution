@@ -23,10 +23,10 @@ public class TechnolutionOreGen {
                             Register.THETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(ThetaConfig));
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                     Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                            Register.ETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(EtaConfig));
+                            Register.ETA_ORE_BLOCK.get().getDefaultState(), 6)).withPlacement(EtaConfig));
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                            Register.ZETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(ZetaConfig));            
+                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+                            Register.ZETA_ORE_BLOCK.get().getDefaultState(), 3)).withPlacement(ZetaConfig));            
         }
     }
 }
