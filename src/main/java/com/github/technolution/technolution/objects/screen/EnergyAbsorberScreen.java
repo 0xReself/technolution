@@ -25,7 +25,7 @@ public class EnergyAbsorberScreen extends ContainerScreen<EnergyAbsorberContaine
         this.renderHoveredToolTip(mouseX, mouseY);
     }
 
-    @SuppressWarnings("closed")
+    @SuppressWarnings("all")
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         drawString(Minecraft.getInstance().fontRenderer, "Energy: " + container.getEnergy(), 10, 10, 0xffffff);

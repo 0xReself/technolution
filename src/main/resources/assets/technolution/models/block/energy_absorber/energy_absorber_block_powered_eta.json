@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "particle": "technolution:block/energy_absorber/eta/energy_absorber_block_side",
+        "down": "technolution:block/energy_absorber/eta/energy_absorber_block_side",
+        "up": "technolution:block/energy_absorber/eta/energy_absorber_block_side",
+        "east": "technolution:block/energy_absorber/eta/energy_absorber_block_side",
+        "west": "technolution:block/energy_absorber/eta/energy_absorber_block_side",
+        "north": "technolution:block/energy_absorber/eta/energy_absorber_block_front_powered", 
+        "south": "technolution:block/energy_absorber/eta/energy_absorber_block_side"
+    }
+}

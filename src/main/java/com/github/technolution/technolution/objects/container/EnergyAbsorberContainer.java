@@ -1,6 +1,7 @@
 package com.github.technolution.technolution.objects.container;
 
 import com.github.technolution.technolution.init.Register;
+import com.github.technolution.technolution.objects.tileentity.EnergyAbsorberEntity;
 import com.github.technolution.technolution.objects.tools.CustomEnergyStorage;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -80,7 +81,19 @@ public class EnergyAbsorberContainer extends Container {
 
     @Override
     public boolean canInteractWith(PlayerEntity playerIn) {
-        return isWithinUsableDistance(IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos()), playerEntity, Register.ENERGY_ABSORBER_BLOCK.get());
+        if(tileEntity instanceof EnergyAbsorberEntity) {
+            EnergyAbsorberEntity ent = (EnergyAbsorberEntity) tileEntity;
+            if(ent.getTier() == 4) {
+                return isWithinUsableDistance(IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos()), playerEntity, Register.ENERGY_ABSORBER_BLOCK_ZETA.get());
+            } else if(ent.getTier() == 3) {
+                return isWithinUsableDistance(IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos()), playerEntity, Register.ENERGY_ABSORBER_BLOCK_ETA.get());
+            } else if(ent.getTier() == 2) {
+                return isWithinUsableDistance(IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos()), playerEntity, Register.ENERGY_ABSORBER_BLOCK_THETA.get());
+            } else if(ent.getTier() == 1) {
+                return isWithinUsableDistance(IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos()), playerEntity, Register.ENERGY_ABSORBER_BLOCK_BASIC.get());
+            }
+        }
+        return false;
     }
 
     @Override

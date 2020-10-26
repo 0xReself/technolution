@@ -7,5 +7,9 @@
     "item.technolution.theta_ore_block": "Theta Ore",
     "item.technolution.eta_ore_block": "Eta Ore",
     "item.technolution.zeta_ore_block": "Zeta Ore",
-    "crystal_item_info": "Burntime: %s"
+    "crystal_item_info": "Burntime: %s",
+    "block.technolution.energy_absorber_block_basic": "Basic Energy Absorber",
+    "block.technolution.energy_absorber_block_theta": "Theta Energy Absorber",
+    "block.technolution.energy_absorber_block_era": "Era Energy Absorber",
+    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber"
 }

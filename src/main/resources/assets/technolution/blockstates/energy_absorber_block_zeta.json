@@ -1,0 +1,36 @@
+{
+    "variants": {
+      "facing=north,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_zeta",
+        "y": 0
+      },
+      "facing=south,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_zeta",
+        "y": 180
+      },
+      "facing=west,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_zeta",
+        "y": 270
+      },
+      "facing=east,powered=false": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_zeta",
+        "y": 90
+      },
+      "facing=north,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_zeta",
+        "y": 0
+      },
+      "facing=south,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_zeta",
+        "y": 180
+      },
+      "facing=west,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_zeta",
+        "y": 270
+      },
+      "facing=east,powered=true": {
+        "model": "technolution:block/energy_absorber/energy_absorber_block_powered_zeta",
+        "y": 90
+      }
+    }
+  }
