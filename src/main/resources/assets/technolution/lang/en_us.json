@@ -11,5 +11,7 @@
     "block.technolution.energy_absorber_block_basic": "Basic Energy Absorber",
     "block.technolution.energy_absorber_block_theta": "Theta Energy Absorber",
     "block.technolution.energy_absorber_block_eta": "Era Energy Absorber",
-    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber"
+    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber",
+    "block.technolution.magical_dirt_block": "Magical Dirt",
+    "block.technolution.magical_grass_block": "Magical Grass"
 }

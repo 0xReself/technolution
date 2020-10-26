@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+        "particle": "technolution:block/magical_dirt_block",
+        "down": "technolution:block/magical_dirt_block",
+        "up": "technolution:block/magical_dirt_block",
+        "east": "technolution:block/magical_dirt_block",
+        "west": "technolution:block/magical_dirt_block",
+        "north": "technolution:block/magical_dirt_block", 
+        "south": "technolution:block/magical_dirt_block"
+    }
+}
