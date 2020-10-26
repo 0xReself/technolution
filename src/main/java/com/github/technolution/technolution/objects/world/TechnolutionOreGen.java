@@ -25,7 +25,7 @@ public class TechnolutionOreGen {
                     Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                             Register.ETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(EtaConfig));
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
                             Register.ZETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(ZetaConfig));            
         }
     }
