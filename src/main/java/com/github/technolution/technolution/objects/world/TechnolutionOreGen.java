@@ -17,7 +17,7 @@ public class TechnolutionOreGen {
             ConfiguredPlacement<?> customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 25));
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                     Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                            Register.TURQUOISE_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(customConfig));
+                            Register.THETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(customConfig));
         }
     }
 }
