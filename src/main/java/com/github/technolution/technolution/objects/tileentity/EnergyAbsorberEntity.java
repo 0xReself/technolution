@@ -2,12 +2,13 @@ package com.github.technolution.technolution.objects.tileentity;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.github.technolution.technolution.Technolution;
 import com.github.technolution.technolution.init.Config;
+import com.github.technolution.technolution.objects.items.CrystalItem;
 import com.github.technolution.technolution.objects.tools.CustomEnergyStorage;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -34,6 +35,8 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
     protected int blockTier = 1;
 
     private int counter = 0;
+
+    private int persec = 0;
     
 
     public EnergyAbsorberEntity(TileEntityType<?> type) {
@@ -52,17 +55,20 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
 
         if(counter > 0) {
             counter--;
-            if(counter <= 0) {
-                energyStorage.addEnergy(Config.ENERGY_ABSORBER_GENERATE.get() * blockTier);
+            if(counter % 10 == 0) {
+                energyStorage.addEnergy(persec / 2);
             }
             markDirty();
         }
 
         if (counter <= 0) {
             ItemStack stack = itemHandler.getStackInSlot(0);
-            if (stack.getItem() == Items.DIAMOND) {
+            if (stack.getItem() instanceof CrystalItem) {
+                CrystalItem item = (CrystalItem) stack.getItem();
+                persec = (int)(((double) blockTier * 0.5 + 0.5) * item.energyPerSec);
+                Technolution.LOGGER.debug("pertick: " + persec / 20 + " for: " + item.burnTime);
                 itemHandler.extractItem(0, 1, false);
-                counter = 20 * Config.ENERGY_ABSORBER_TIME.get();
+                counter = item.burnTime;
                 markDirty();
             }
         }
@@ -134,8 +140,7 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
 
             @Override
             public boolean isItemValid(int slot, ItemStack stack) {
-                //TODO return true when crystal
-                if(stack.getItem() == Items.DIAMOND) {
+                if(stack.getItem() instanceof CrystalItem) {
                     return true;
                 }
                 return false;
@@ -143,8 +148,7 @@ public class EnergyAbsorberEntity extends TileEntity implements ITickableTileEnt
 
             @Override
             public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
-                //TODO only accept crystal
-                if(stack.getItem() != Items.DIAMOND) {
+                if(!isItemValid(slot, stack)) {
                     return stack;
                 }
                 return super.insertItem(slot, stack, simulate);

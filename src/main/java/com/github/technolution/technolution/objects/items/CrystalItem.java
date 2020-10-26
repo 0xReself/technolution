@@ -12,12 +12,12 @@ import java.util.List;
 import com.github.technolution.technolution.init.ModItemGroup;
 
 public class CrystalItem extends Item {
-    private int burnTime = 180;
+    public int burnTime = 1000;
     public int energyPerSec = 100;
 
     public CrystalItem(int tier){
         super(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP));
-        energyPerSec = burnTime * (int)Math.pow(tier, 2);
+        energyPerSec = burnTime * (int)Math.pow(tier, 2) * tier;
         burnTime /= tier;
     }
 

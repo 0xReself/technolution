@@ -1,6 +1,7 @@
 package com.github.technolution.technolution.objects.container;
 
 import com.github.technolution.technolution.init.Register;
+import com.github.technolution.technolution.objects.items.CrystalItem;
 import com.github.technolution.technolution.objects.tileentity.EnergyAbsorberEntity;
 import com.github.technolution.technolution.objects.tools.CustomEnergyStorage;
 
@@ -9,7 +10,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.IntReferenceHolder;
@@ -109,8 +109,7 @@ public class EnergyAbsorberContainer extends Container {
                 }
                 slot.onSlotChange(stack, itemStack);
             } else {
-                //TODO: Crystal
-                if(stack.getItem() == Items.DIAMOND) {
+                if(stack.getItem() instanceof CrystalItem) {
                     if(this.mergeItemStack(stack, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
