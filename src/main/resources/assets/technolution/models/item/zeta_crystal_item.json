@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "technolution:item/zeta_crystal_item"
+	}
+}

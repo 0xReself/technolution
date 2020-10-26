@@ -1,12 +1,15 @@
 {
     "item.technolution.example_item": "EI",
     "itemGroup.technolution": "Kranke items",
-    "item.technolution.turquoise_crystal_item": "Turquoise Crysta",
-    "item.technolution.turquoise_ore": "Turquoise Ore",
+    "item.technolution.theta_crystal_item": "Theta Crystal",
+    "item.technolution.eta_crystal_item": "Eta Crystal",
+    "item.technolution.zeta_crystal_item": "Zeta Crystal",
+    "item.technolution.theta_ore_block": "Theta Ore",
+    "item.technolution.eta_ore_block": "Eta Ore",
+    "item.technolution.zeta_ore_block": "Zeta Ore",
+    "crystal_item_info": "Burntime: %s",
     "block.technolution.energy_absorber_block_basic": "Basic Energy Absorber",
     "block.technolution.energy_absorber_block_theta": "Theta Energy Absorber",
     "block.technolution.energy_absorber_block_eta": "Era Energy Absorber",
-    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber",
-    "item.technolution.theta_crystal_item": "Theta Crysta",
-    "item.technolution.theta_ore_block": "Theta Ore"
+    "block.technolution.energy_absorber_block_zeta": "Zeta Energy Absorber"
 }
