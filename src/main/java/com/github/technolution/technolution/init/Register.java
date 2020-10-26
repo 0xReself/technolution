@@ -1,6 +1,7 @@
 package com.github.technolution.technolution.init;
 
 import com.github.technolution.technolution.Technolution;
+import com.github.technolution.technolution.objects.blocks.CableBlock;
 import com.github.technolution.technolution.objects.blocks.CrystalOreBlock;
 import com.github.technolution.technolution.objects.blocks.EnergyAbsorberBlock;
 import com.github.technolution.technolution.objects.blocks.EssenceFurnace;
@@ -8,6 +9,7 @@ import com.github.technolution.technolution.objects.blocks.ExampleOre;
 import com.github.technolution.technolution.objects.container.EnergyAbsorberContainer;
 import com.github.technolution.technolution.objects.items.CrystalItem;
 import com.github.technolution.technolution.objects.items.ExampleItem;
+import com.github.technolution.technolution.objects.tileentity.CableEntity;
 import com.github.technolution.technolution.objects.tileentity.EssenceFurnaceEntity;
 import com.github.technolution.technolution.objects.tileentity.basic.EnergyAbsorberEntityBasic;
 import com.github.technolution.technolution.objects.tileentity.eta.EnergyAbsorberEntityEta;
@@ -63,7 +65,7 @@ public class Register {
     public static final RegistryObject<Block> THETA_ORE_BLOCK = BLOCKS.register("theta_ore_block", () -> new CrystalOreBlock(1));
     public static final RegistryObject<Block> ETA_ORE_BLOCK = BLOCKS.register("eta_ore_block", () -> new CrystalOreBlock(2));
     public static final RegistryObject<Block> ZETA_ORE_BLOCK = BLOCKS.register("zeta_ore_block", () -> new CrystalOreBlock(3));
-
+    public static final RegistryObject<Block> CABLE_BLOCK = BLOCKS.register("cable_block", () -> new CableBlock());
 
     //Items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
@@ -76,12 +78,13 @@ public class Register {
     public static final RegistryObject<Item> THETA_ORE_ITEM = ITEMS.register("theta_ore_block", () -> new BlockItem(THETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ETA_ORE_ITEM = ITEMS.register("eta_ore_block", () -> new BlockItem(ETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ZETA_ORE_ITEM = ITEMS.register("zeta_ore_block", () -> new BlockItem(ZETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
-
     public static final RegistryObject<Item> ESSENCE_FURNACE_ITEM = ITEMS.register("essence_furnace", () -> new BlockItem(ESSENCE_FURNACE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> CABLE_ITEM = ITEMS.register("cable_block", () -> new BlockItem(CABLE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     
     //Entities
     public static final RegistryObject<TileEntityType<EssenceFurnaceEntity>> ESSENCE_FURNACE_ENTITY = TILE_ENTITIES.register("essence_furnace_entity", () -> TileEntityType.Builder.create(EssenceFurnaceEntity::new, ESSENCE_FURNACE.get()).build(null));
-    
+    public static final RegistryObject<TileEntityType<CableEntity>> CABLE_ENTITY = TILE_ENTITIES.register("cable_entity", () -> TileEntityType.Builder.create(CableEntity::new, CABLE_BLOCK.get()).build(null));
+
     public static void init(final IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 		ITEMS.register(eventBus);
