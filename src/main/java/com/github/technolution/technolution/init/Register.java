@@ -14,7 +14,10 @@ import com.github.technolution.technolution.objects.tileentity.basic.EnergyAbsor
 import com.github.technolution.technolution.objects.tileentity.eta.EnergyAbsorberEntityEta;
 import com.github.technolution.technolution.objects.tileentity.theta.EnergyAbsorberEntityTheta;
 import com.github.technolution.technolution.objects.tileentity.zeta.EnergyAbsorberEntityZeta;
+import com.github.technolution.technolution.objects.world.structurs.MagicFieldPieces;
+import com.github.technolution.technolution.objects.world.structurs.MagicFieldStructure;
 
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.container.ContainerType;
@@ -23,6 +26,8 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -91,10 +96,20 @@ public class Register {
     //Entities
     public static final RegistryObject<TileEntityType<EssenceFurnaceEntity>> ESSENCE_FURNACE_ENTITY = TILE_ENTITIES.register("essence_furnace_entity", () -> TileEntityType.Builder.create(EssenceFurnaceEntity::new, ESSENCE_FURNACE.get()).build(null));
     
+    //Structures
+    public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<Feature<?>>(
+			ForgeRegistries.FEATURES, Technolution.ModID);
+	
+	public static IStructurePieceType MAGIC_FIELD_PIECE = MagicFieldPieces.Piece::new;
+
+	public static final RegistryObject<MagicFieldStructure> MAGIC_FIELD_STRUCTURE = FEATURES.register("magic_field_structure",
+			() -> new MagicFieldStructure(NoFeatureConfig::deserialize));
+
     public static void init(final IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 		ITEMS.register(eventBus);
         TILE_ENTITIES.register(eventBus);
         CONTAINERS.register(eventBus);
+        FEATURES.register(eventBus);
 	}
 }

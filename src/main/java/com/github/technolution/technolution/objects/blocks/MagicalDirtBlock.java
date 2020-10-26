@@ -1,11 +1,8 @@
 package com.github.technolution.technolution.objects.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.GrassBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.audio.Sound;
 
 public class MagicalDirtBlock extends Block {
     private Boolean isGrass = false;

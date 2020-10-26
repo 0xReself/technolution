@@ -20,8 +20,6 @@ public class TechnolutionOreGen {
                                         .configure(new CountRangeConfig(20, 5, 5, 20));
                         ConfiguredPlacement<?> ZetaConfig = Placement.COUNT_RANGE
                                         .configure(new CountRangeConfig(20, 5, 5, 50));
-                        ConfiguredPlacement<?> DirtConfig = Placement.COUNT_RANGE
-                                        .configure(new CountRangeConfig(40, 0, 0, 50));
 
                         biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
                                         Feature.ORE.withConfiguration(new OreFeatureConfig(
@@ -38,11 +36,6 @@ public class TechnolutionOreGen {
                                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
                                                         Register.ZETA_ORE_BLOCK.get().getDefaultState(), 3))
                                                         .withPlacement(ZetaConfig));
-                        biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-                                        Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                        OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                                                        Register.MAGICAL_GRASS_BLOCK.get().getDefaultState(), 100))
-                                                        .withPlacement(DirtConfig));
                 }
         }
 }

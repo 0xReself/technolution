@@ -7,7 +7,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "technolution:magical_dirt_item"
+                    "name": "technolution:magical_dirt_block"
                 }
             ]
         }
