@@ -71,15 +71,16 @@ public class Register {
     public static final RegistryObject<Block> ZETA_ORE_BLOCK = BLOCKS.register("zeta_ore_block", () -> new CrystalOreBlock(3));
     public static final RegistryObject<Block> CABLE_BLOCK = BLOCKS.register("cable_block", () -> new CableBlock());
 
+    public static final RegistryObject<Item> THETA_ORE_ITEM = ITEMS.register("theta_ore_block", () -> new BlockItem(THETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> ETA_ORE_ITEM = ITEMS.register("eta_ore_block", () -> new BlockItem(ETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> ZETA_ORE_ITEM = ITEMS.register("zeta_ore_block", () -> new BlockItem(ZETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+
     //Items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> THETA_CRYSTAL_ITEM = ITEMS.register("theta_crystal_item", () -> new CrystalItem(1));
     public static final RegistryObject<Item> ETA_CRYSTAL_ITEM = ITEMS.register("eta_crystal_item", () -> new CrystalItem(2));
     public static final RegistryObject<Item> ZETA_CRYSTAL_ITEM = ITEMS.register("zeta_crystal_item", () -> new CrystalItem(3));
 
-    public static final RegistryObject<Item> THETA_ORE_ITEM = ITEMS.register("theta_ore_block", () -> new BlockItem(THETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> ETA_ORE_ITEM = ITEMS.register("eta_ore_block", () -> new BlockItem(ETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
-    public static final RegistryObject<Item> ZETA_ORE_ITEM = ITEMS.register("zeta_ore_block", () -> new BlockItem(ZETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> CABLE_ITEM = ITEMS.register("cable_block", () -> new BlockItem(CABLE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     
     //Blocks
