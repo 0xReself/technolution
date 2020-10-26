@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+        "particle": "technolution:block/zeta_ore_block",
+        "down": "technolution:block/zeta_ore_block",
+        "up": "technolution:block/zeta_ore_block",
+        "east": "technolution:block/zeta_ore_block",
+        "west": "technolution:block/zeta_ore_block",
+        "north": "technolution:block/zeta_ore_block", 
+        "south": "technolution:block/zeta_ore_block"
+    }
+}

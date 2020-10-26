@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+        "particle": "technolution:block/eta_ore_block",
+        "down": "technolution:block/eta_ore_block",
+        "up": "technolution:block/eta_ore_block",
+        "east": "technolution:block/eta_ore_block",
+        "west": "technolution:block/eta_ore_block",
+        "north": "technolution:block/eta_ore_block", 
+        "south": "technolution:block/eta_ore_block"
+    }
+}

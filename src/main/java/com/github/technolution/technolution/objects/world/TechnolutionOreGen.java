@@ -14,10 +14,19 @@ public class TechnolutionOreGen {
     public static void generateOre() {
         // for number of Bioms
         for (Biome biome : ForgeRegistries.BIOMES) {
-            ConfiguredPlacement<?> customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 25));
+            ConfiguredPlacement<?> ThetaConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 20, 5, 50));
+            ConfiguredPlacement<?> EtaConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 20));
+            ConfiguredPlacement<?> ZetaConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 50));
+
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                     Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                            Register.THETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(customConfig));
+                            Register.THETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(ThetaConfig));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                            Register.ETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(EtaConfig));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+                    Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                            Register.ZETA_ORE_BLOCK.get().getDefaultState(), 10)).withPlacement(ZetaConfig));            
         }
     }
 }

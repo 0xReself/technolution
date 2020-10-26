@@ -1,10 +1,10 @@
 package com.github.technolution.technolution.init;
 
 import com.github.technolution.technolution.Technolution;
+import com.github.technolution.technolution.objects.blocks.CrystalOreBlock;
 import com.github.technolution.technolution.objects.blocks.EnergyAbsorberBlock;
 import com.github.technolution.technolution.objects.blocks.EssenceFurnace;
 import com.github.technolution.technolution.objects.blocks.ExampleOre;
-import com.github.technolution.technolution.objects.blocks.ThetaOreBlock;
 import com.github.technolution.technolution.objects.container.EnergyAbsorberContainer;
 import com.github.technolution.technolution.objects.items.CrystalItem;
 import com.github.technolution.technolution.objects.items.ExampleItem;
@@ -42,15 +42,23 @@ public class Register {
     public static final RegistryObject<Block> EXAMPLE_ORE = BLOCKS.register("example_ore", () -> new ExampleOre());
     public static final RegistryObject<Block> ESSENCE_FURNACE = BLOCKS.register("essence_furnace", () -> new EssenceFurnace());
     public static final RegistryObject<Block> ENERGY_ABSORBER_BLOCK = BLOCKS.register("energy_absorber_block", () -> new EnergyAbsorberBlock());
-    public static final RegistryObject<Block> THETA_ORE_BLOCK = BLOCKS.register("theta_ore_block", () -> new ThetaOreBlock());
+    public static final RegistryObject<Block> THETA_ORE_BLOCK = BLOCKS.register("theta_ore_block", () -> new CrystalOreBlock(1));
+    public static final RegistryObject<Block> ETA_ORE_BLOCK = BLOCKS.register("eta_ore_block", () -> new CrystalOreBlock(2));
+    public static final RegistryObject<Block> ZETA_ORE_BLOCK = BLOCKS.register("zeta_ore_block", () -> new CrystalOreBlock(3));
+
 
     //Items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new ExampleItem(new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> THETA_CRYSTAL_ITEM = ITEMS.register("theta_crystal_item", () -> new CrystalItem(1));
+    public static final RegistryObject<Item> ETA_CRYSTAL_ITEM = ITEMS.register("eta_crystal_item", () -> new CrystalItem(2));
+    public static final RegistryObject<Item> ZETA_CRYSTAL_ITEM = ITEMS.register("zeta_crystal_item", () -> new CrystalItem(3));
     
     //Block Items
     public static final RegistryObject<Item> EXAMPLE_ORE_ITEM = ITEMS.register("example_ore", () -> new BlockItem(EXAMPLE_ORE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> THETA_ORE_ITEM = ITEMS.register("theta_ore_block", () -> new BlockItem(THETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> ETA_ORE_ITEM = ITEMS.register("eta_ore_block", () -> new BlockItem(ETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> ZETA_ORE_ITEM = ITEMS.register("zeta_ore_block", () -> new BlockItem(ZETA_ORE_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
+
     public static final RegistryObject<Item> ESSENCE_FURNACE_ITEM = ITEMS.register("essence_furnace", () -> new BlockItem(ESSENCE_FURNACE.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ENERGY_ABSORBER_ITEM = ITEMS.register("energy_absorber_block", () -> new BlockItem(ENERGY_ABSORBER_BLOCK.get(), new Item.Properties().group(ModItemGroup.MOD_ITEM_GROUP)));
     //Entities
